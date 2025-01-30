@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regisztráció</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="regisztracio">
+        <div class="container">
+            <h1 align="center">Regisztráció</h1>
+            <p align="center">Kérem töltse ki az adatokat</p>
+            <hr>
+            <label for="name">
+                <input type="text" placeholder="Kérem adja meg a felhasználónevét" name="name" id="name" required>
+            </label>
+            <label for="email">
+                <input type="email" placeholder="Írja be az E-mail címét" name="email" id="email">
+            </label>
+            <label for="birth">
+                <input type="date" placeholder="Válassza ki a születési dátumát" name="birth" id="birth">
+            </label>
+            <label for="pass">
+                <input type="password" pattern="^(?=.*\d)(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9])\S{8,}$" title="A jelszónak legalább egy számot kell tartalmaznia, egy ábécét, egy szimbólumot, és legyen legalább legalább 8 karakter hosszú" placeholder="Írja be a jelszót" name="password" id="password">
+            </label>
+            <label for="pass-repeat">
+                <input type="password" placeholder="Írja be a jelszót ismét" name="password-repeat" id="password-repeat">
+            </label>
+            <label for="sex">
+            <select name="sex" id="sex" onchange="toggleLeanykoriNev()">
+                <option value="male">Férfi</option>
+                <option value="female">Nő</option>
+            </select>
+            </label>
+            <div id="leanykori-container" style="display: none;">
+                <label for="maiden-name">Leánykori név:</label>
+                <input type="text" name="leanykor" id="leanykor" placeholder="Kérem adja meg a leánykori nevét">
+            </div>
+            <hr>
+            <p align="center">Egy fiók készítésével beleegyeszik a <a href="https://www.fidesz.hu/adatvedelem">Feltételek & Adatvédelem</a>.</p>
+            <button type="submit" class="registerbtn">Regisztráció</button>
+            </div>
+            <div class="container signin">
+                <p>Van már fiókod? <a href="#">Jelentkezz be</a></p>
+            </div>
+            </div>
+            <div id="message"></div>
+        </form>
+    <script src="script.js"></script>
+</body>
+</html>
